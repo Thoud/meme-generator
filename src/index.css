@@ -1,3 +1,4 @@
+/* General Styling */
 html,
 button,
 input {
@@ -34,6 +35,7 @@ h1 {
   color: #eeeeee;
 }
 
+/* Styling the left part of the main site */
 .inputFields {
   grid-area: 2 / 2;
   display: flex;
@@ -80,6 +82,7 @@ button {
   width: 15rem;
 }
 
+/* Styling the right part of the main site */
 .previewMeme {
   grid-area: 2 / 3;
   display: flex;
@@ -96,6 +99,7 @@ button {
   border: 0.056rem solid #222831;
 }
 
+/* Styling for the overlay */
 .overlay {
   position: absolute;
   width: 100vw;
@@ -115,10 +119,12 @@ button {
   grid-template: 1fr 15fr 1fr / 1fr 15fr 1fr;
 }
 
+/* Class for toggling the overlay */
 .hidden {
   display: none;
 }
 
+/* Styling of the closing "X" inside of the overlay */
 .close {
   width: 2rem;
   height: 2rem;
@@ -150,6 +156,7 @@ button {
   transform: rotate(-45deg);
 }
 
+/* Styling of the inside of the overlay for previewing Memes */
 .close ~ div {
   grid-area: 2 / 2;
 }
