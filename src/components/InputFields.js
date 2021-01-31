@@ -1,30 +1,53 @@
-export default function InputFields(props) {
-  function escapingCharacters(item) {
-    if (item === ' ') {
-      return '_';
-    } else if (item === '_') {
-      return '__';
-    } else if (item === '-') {
-      return '--';
-    } else if (item === '?') {
-      return '~q';
-    } else if (item === '&') {
-      return '~a';
-    } else if (item === '%') {
-      return '~p';
-    } else if (item === '#') {
-      return '~h';
-    } else if (item === '/') {
-      return '~s';
-    } else if (item === '\\') {
-      return '~b';
-    } else if (item === '"') {
-      return "''";
-    } else {
-      return item;
-    }
+// Helper function for escaping not allowed Character in the URL for the api call
+function escapingCharacters(item) {
+  if (item === ' ') {
+    return '_';
+  } else if (item === '_') {
+    return '__';
+  } else if (item === '-') {
+    return '--';
+  } else if (item === '?') {
+    return '~q';
+  } else if (item === '&') {
+    return '~a';
+  } else if (item === '%') {
+    return '~p';
+  } else if (item === '#') {
+    return '~h';
+  } else if (item === '/') {
+    return '~s';
+  } else if (item === '\\') {
+    return '~b';
+  } else if (item === '"') {
+    return "''";
+  } else {
+    return item;
   }
+}
 
+// Helper function to download the created meme
+function download(downloadUrl, fileText) {
+  fetch(downloadUrl.split('.').slice(0, 3).join('.') + '.png', {
+    method: 'GET',
+    headers: {}
+  })
+    .then((response) => {
+      response.arrayBuffer().then(function (buffer) {
+        const url = window.URL.createObjectURL(new Blob([buffer]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', fileText + '.png');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+export default function InputFields(props) {
   return (
     <div className="inputFields">
       <div>
@@ -63,7 +86,9 @@ export default function InputFields(props) {
       >
         Create Meme
       </button>
-      <button>Download</button>
+      <button onClick={() => download(props.memeUrl, props.chosenMeme)}>
+        Download
+      </button>
     </div>
   );
 }

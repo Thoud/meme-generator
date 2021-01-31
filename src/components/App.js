@@ -19,10 +19,13 @@ export default function App() {
   const [templateNames, setTemplateNames] = useState([]);
   // Switch between Overlay active and hidden
   const [overlayHidden, setOverlayHidden] = useState(true);
-  // Saving the URL of the chosen meme and the text
+  // Saving the name of the chosen meme
   const [chosenMeme, setChosenMeme] = useState('');
+  // Saving the top text
   const [topText, setTopText] = useState('');
+  // Saving the bottom text
   const [bottomText, setBottomText] = useState('');
+  // Saving the complete meme URL of the generated meme
   const [memeUrl, setMemeUrl] = useState('');
 
   // Using useEffect to setTemplateNames after the fetch is resolved
@@ -40,6 +43,7 @@ export default function App() {
         bottomText={bottomText}
         setBottomText={setBottomText}
         chosenMeme={chosenMeme}
+        memeUrl={memeUrl}
         setMemeUrl={setMemeUrl}
       />
       <PreviewMeme chosenMeme={chosenMeme} memeUrl={memeUrl} />

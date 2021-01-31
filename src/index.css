@@ -80,6 +80,7 @@ button {
   text-align: center;
   display: inline-block;
   width: 15rem;
+  cursor: pointer;
 }
 
 /* Styling the right part of the main site */
@@ -133,12 +134,12 @@ button {
   cursor: pointer;
 }
 
-/* Classes for toggling the overlay */
+/* Classes and animation for toggling the overlay */
 .visible {
-  animation: open 200ms ease-in-out forwards;
+  animation: visible 200ms ease-in-out forwards;
 }
 
-@keyframes open {
+@keyframes visible {
   from {
     visibility: hidden;
     opacity: 0;
@@ -156,10 +157,10 @@ button {
 }
 
 .hidden {
-  animation: close 200ms ease-in-out forwards;
+  animation: hidden 200ms ease-in-out forwards;
 }
 
-@keyframes close {
+@keyframes hidden {
   from {
     visibility: visible;
     opacity: 1;
