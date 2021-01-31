@@ -1,3 +1,3 @@
 export default function Images() {
-  return <div className="previewMeme"></div>;
+  return <div className="previewMeme" />;
 }

@@ -1,4 +1,4 @@
-export default function InputFields() {
+export default function InputFields(props) {
   return (
     <div className="inputFields">
       <div>
@@ -9,7 +9,13 @@ export default function InputFields() {
         <label htmlFor="bottomText">Bottom Text</label>
         <input id="bottomText" type="text" />
       </div>
-      <button>Choose Meme</button>
+      <button
+        onClick={() => props.setOverlayHidden(false)}
+        onKeyDown={() => props.setOverlayHidden(false)}
+        tabIndex={0}
+      >
+        Choose Meme
+      </button>
       <button>Create Meme</button>
       <button>Download</button>
     </div>

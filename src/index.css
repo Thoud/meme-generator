@@ -102,6 +102,7 @@ button {
 /* Styling for the overlay */
 .overlay {
   position: absolute;
+  visibility: hidden;
   width: 100vw;
   height: 100vh;
   background-color: #393e46e8;
@@ -119,9 +120,55 @@ button {
   grid-template: 1fr 15fr 1fr / 1fr 15fr 1fr;
 }
 
-/* Class for toggling the overlay */
+.overflow {
+  overflow: scroll;
+}
+
+.overflow > img {
+  margin: 0.5rem;
+}
+
+/* Classes for toggling the overlay */
+.visible {
+  animation: open 200ms ease-in-out forwards;
+}
+
+@keyframes open {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 .hidden {
-  display: none;
+  animation: close 200ms ease-in-out forwards;
+}
+
+@keyframes close {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 /* Styling of the closing "X" inside of the overlay */
