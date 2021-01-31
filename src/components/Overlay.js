@@ -20,8 +20,18 @@ export default function Overlay(props) {
             return (
               <div
                 key={i}
-                onClick={() => props.setChosenMeme(item)}
-                onKeyDown={() => props.setChosenMeme(item)}
+                onClick={() => {
+                  props.setChosenMeme(item);
+                  props.setMemeUrl(
+                    `https://api.memegen.link/images/${item}.jpg?width=450&height=450`
+                  );
+                }}
+                onKeyDown={() => {
+                  props.setChosenMeme(item);
+                  props.setMemeUrl(
+                    `https://api.memegen.link/images/${item}.jpg?width=450&height=450`
+                  );
+                }}
                 role="button"
                 tabIndex={0}
               >
