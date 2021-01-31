@@ -17,14 +17,15 @@ async function getPreviewTemplates(setter) {
 export default function App() {
   // Storing all URLs for preview in an array
   const [templateNames, setTemplateNames] = useState([]);
+  // Switch between Overlay active and hidden
+  const [overlayHidden, setOverlayHidden] = useState(true);
+  // Saving the URL of the chosen meme
+  const [chosenMeme, setChosenMeme] = useState('');
 
   // Using useEffect to setTemplateNames after the fetch is resolved
   useEffect(() => {
     getPreviewTemplates(setTemplateNames);
   }, []);
-
-  // Switch between Overlay active and hidden
-  const [overlayHidden, setOverlayHidden] = useState(true);
 
   return (
     <>
@@ -33,11 +34,12 @@ export default function App() {
         overlayHidden={overlayHidden}
         setOverlayHidden={setOverlayHidden}
       />
-      <PreviewMeme />
+      <PreviewMeme chosenMeme={chosenMeme} />
       <Overlay
         templateNames={templateNames}
         overlayHidden={overlayHidden}
         setOverlayHidden={setOverlayHidden}
+        setChosenMeme={setChosenMeme}
       />
     </>
   );

@@ -18,11 +18,19 @@ export default function Overlay(props) {
         <div className="overflow">
           {props.templateNames.map((item, i) => {
             return (
-              <img
+              <div
                 key={i}
-                src={`https://api.memegen.link/images/${item}.jpg?width=180&height=180`}
-                alt={item}
-              />
+                onClick={() => props.setChosenMeme(item)}
+                onKeyDown={() => props.setChosenMeme(item)}
+                role="button"
+                tabIndex={0}
+              >
+                <img
+                  key={i}
+                  src={`https://api.memegen.link/images/${item}.jpg?width=180&height=180`}
+                  alt={item}
+                />
+              </div>
             );
           })}
         </div>

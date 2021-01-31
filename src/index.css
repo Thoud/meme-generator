@@ -124,8 +124,13 @@ button {
   overflow: scroll;
 }
 
-.overflow > img {
+.overflow > div {
+  display: inline;
+}
+
+.overflow > div > img {
   margin: 0.5rem;
+  cursor: pointer;
 }
 
 /* Classes for toggling the overlay */
