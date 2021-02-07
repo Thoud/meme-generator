@@ -15,20 +15,20 @@ async function getPreviewTemplates(setter) {
 }
 
 export default function App() {
-  // Storing all URLs for preview in an array
+  // Store all URLs for preview in an array
   const [templateNames, setTemplateNames] = useState([]);
   // Switch between Overlay active and hidden
   const [overlayHidden, setOverlayHidden] = useState(true);
-  // Saving the name of the chosen meme
+  // Save the name of the chosen meme
   const [chosenMeme, setChosenMeme] = useState('');
-  // Saving the top text
+  // Save the top text
   const [topText, setTopText] = useState('');
-  // Saving the bottom text
+  // Save the bottom text
   const [bottomText, setBottomText] = useState('');
-  // Saving the complete meme URL of the generated meme
+  // Save the complete meme URL of the generated meme
   const [memeUrl, setMemeUrl] = useState('');
 
-  // Using useEffect to setTemplateNames after the fetch is resolved
+  // Use useEffect to setTemplateNames after the fetch is resolved
   useEffect(() => {
     getPreviewTemplates(setTemplateNames);
   }, []);
