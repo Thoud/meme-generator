@@ -23,13 +23,13 @@ export default function Overlay(props) {
                 onClick={() => {
                   props.setChosenMeme(item);
                   props.setMemeUrl(
-                    `https://api.memegen.link/images/${item}.jpg?width=450&height=450`
+                    `https://api.memegen.link/images/${item}.jpg?width=450&height=450`,
                   );
                 }}
                 onKeyDown={() => {
                   props.setChosenMeme(item);
                   props.setMemeUrl(
-                    `https://api.memegen.link/images/${item}.jpg?width=450&height=450`
+                    `https://api.memegen.link/images/${item}.jpg?width=450&height=450`,
                   );
                 }}
                 role="button"

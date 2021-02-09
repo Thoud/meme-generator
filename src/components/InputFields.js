@@ -29,7 +29,7 @@ function escapingCharacters(item) {
 function download(downloadUrl, fileText) {
   fetch(downloadUrl.split('.').slice(0, 3).join('.') + '.png', {
     method: 'GET',
-    headers: {}
+    headers: {},
   })
     .then((response) => {
       response.arrayBuffer().then(function (buffer) {
@@ -80,7 +80,7 @@ export default function InputFields(props) {
       <button
         onClick={() =>
           props.setMemeUrl(
-            `https://api.memegen.link/images/${props.chosenMeme}/${props.topText}/${props.bottomText}.jpg?width=450&height=450`
+            `https://api.memegen.link/images/${props.chosenMeme}/${props.topText}/${props.bottomText}.jpg?width=450&height=450`,
           )
         }
       >
