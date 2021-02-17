@@ -2763,10 +2763,10 @@
     "@typescript-eslint/types" "4.8.1"
     eslint-visitor-keys "^2.0.0"
 
-"@upleveled/eslint-config-upleveled@1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@upleveled/eslint-config-upleveled/-/eslint-config-upleveled-1.6.1.tgz#fb28dd9a176d1bb03965dcc5cd40f33e4e684809"
-  integrity sha512-n9vYwBI27YOOqbCCHw6rTe2hf3CwqF6ckUW30vJwy4COxSvWRhXmAOLBvQxd0tHrCoXXU+4ClamJVh89zu3Zdg==
+"@upleveled/eslint-config-upleveled@1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@upleveled/eslint-config-upleveled/-/eslint-config-upleveled-1.7.1.tgz#d51cb3076083b6b6b017153063bf264b0cbd6f1a"
+  integrity sha512-lqBcBHp41ekeMgM3HfnJvG1CydbCfhb58F0rj5REBOcS4bJ5muMtM+TgsmTH2PH9fqyfINMChVYN2yk+xMx4IQ==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
