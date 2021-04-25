@@ -30,4 +30,4 @@ Create a [Netlify](https://www.netlify.com/) Account and then follow the instruc
 
 ## Preview
 
-[Preview of the app](/images/page.png 'Preview of the app')
+![Preview of the app](/images/page.png 'Preview of the app')
