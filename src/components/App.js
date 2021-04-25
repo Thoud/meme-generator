@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import InputFields from './InputFields';
-import PreviewMeme from './PreviewMeme';
 import Overlay from './Overlay';
+import PreviewMeme from './PreviewMeme';
 
 // Async Function to get all empty Memes available
 async function getPreviewTemplates(setter) {

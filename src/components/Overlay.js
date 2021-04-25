@@ -16,10 +16,10 @@ export default function Overlay(props) {
           tabIndex={0}
         />
         <div className="overflow">
-          {props.templateNames.map((item, i) => {
+          {props.templateNames.map((item) => {
             return (
               <div
-                key={i}
+                key={item}
                 onClick={() => {
                   props.setChosenMeme(item);
                   props.setMemeUrl(
@@ -36,7 +36,7 @@ export default function Overlay(props) {
                 tabIndex={0}
               >
                 <img
-                  key={i}
+                  key={item}
                   src={`https://api.memegen.link/images/${item}.jpg?width=180&height=180`}
                   alt={item}
                 />
